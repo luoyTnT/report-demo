@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PACKET TYPE="REQUEST">
+    <HEAD>
+        <VERSION>R1</VERSION>
+    </HEAD>
+    <BODY>
+    <BASE>
+    <USERNAME>$!request.name</USERNAME>
+    <AGE>$!request.age</AGE>
+    <SEX>$!request.sex</SEX>
+    </BASE>
+    <DETAILS>
+        <PAYINFO>
+            <ACCOUNTID>$!request.account.id</ACCOUNTID>
+            <MONEY>$!request.account.money</MONEY>
+        </PAYINFO>
+    </DETAILS>
+    </BODY>
+</PACKET>
