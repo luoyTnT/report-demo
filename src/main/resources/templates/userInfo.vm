@@ -4,16 +4,20 @@
         <VERSION>R1</VERSION>
     </HEAD>
     <BODY>
-    <BASE>
-    <USERNAME>$!request.name</USERNAME>
-    <AGE>$!request.age</AGE>
-    <SEX>$!request.sex</SEX>
-    </BASE>
-    <DETAILS>
-        <PAYINFO>
-            <ACCOUNTID>$!request.account.id</ACCOUNTID>
-            <MONEY>$!request.account.money</MONEY>
-        </PAYINFO>
-    </DETAILS>
+        #foreach($!request in $!loops)
+<BASE>
+        <USER>
+            <USERNAME>$!request.name</USERNAME>
+            <AGE>$!request.age</AGE>
+            <SEX>$!request.sex</SEX>
+        </USER>
+        </BASE>
+        <DETAILS>
+            <PAYINFO>
+                <ACCOUNTID>$!request.account.id</ACCOUNTID>
+                <MONEY>$!request.account.money</MONEY>
+            </PAYINFO>
+        </DETAILS>
+        #end
     </BODY>
 </PACKET>
