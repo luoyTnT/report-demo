@@ -1,0 +1,1224 @@
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 风险分担机构信息
+ */
+@Table(name="xmxx_lending_agency")
+public class XmxxLendingAgency implements Serializable,Cloneable{
+    /** 机构ID;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String lendingCode ;
+    /** 机构类型;枚举型：见批注或代码 */
+    private String lendersCode ;
+    /** 机构名称;不超过30个汉字 */
+    private String lendingName ;
+    /** 二级机构名称;不超过30个汉字 */
+    private String secondAgName ;
+    /** 风险分担比例;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为%，不能为“0” */
+    private  riskRate ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 机构ID;该ID需要在系统中唯一 */
+    public String getLendingCode(){
+        return this.lendingCode;
+    }
+    /** 机构ID;该ID需要在系统中唯一 */
+    public void setLendingCode(String lendingCode){
+        this.lendingCode=lendingCode;
+    }
+    /** 机构类型;枚举型：见批注或代码 */
+    public String getLendersCode(){
+        return this.lendersCode;
+    }
+    /** 机构类型;枚举型：见批注或代码 */
+    public void setLendersCode(String lendersCode){
+        this.lendersCode=lendersCode;
+    }
+    /** 机构名称;不超过30个汉字 */
+    public String getLendingName(){
+        return this.lendingName;
+    }
+    /** 机构名称;不超过30个汉字 */
+    public void setLendingName(String lendingName){
+        this.lendingName=lendingName;
+    }
+    /** 二级机构名称;不超过30个汉字 */
+    public String getSecondAgName(){
+        return this.secondAgName;
+    }
+    /** 二级机构名称;不超过30个汉字 */
+    public void setSecondAgName(String secondAgName){
+        this.secondAgName=secondAgName;
+    }
+    /** 风险分担比例;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为%，不能为“0” */
+    public  getRiskRate(){
+        return this.riskRate;
+    }
+    /** 风险分担比例;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为%，不能为“0” */
+    public void setRiskRate( riskRate){
+        this.riskRate=riskRate;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 客户信息
+ */
+@Table(name="xmxx_customer_base_info")
+public class XmxxCustomerBaseInfo implements Serializable,Cloneable{
+    /** 客户ID;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String custCode ;
+    /** 客户类型;枚举型：
+企业客户 
+个人客户 */
+    private String customerCode ;
+    /** 客户名称;不超过20个汉字 */
+    private String custName ;
+    /** 证件类型;枚举型：
+身份证 
+统一社会信用代码 */
+    private String identityCode ;
+    /** 证件号码 */
+    private String identityNumber ;
+    /** 是否为农业经营主体;个人客户为空 
+企业客户为枚举型：
+是 
+否
+ */
+    private String isAgriculture ;
+    /** 客户类型/企业规模;个人客户枚举型：
+农户
+住户
+其他
+企业客户枚举型：
+大型企业
+中型企业
+小型企业
+微型企业
+ */
+    private String scaleCode ;
+    /** 归属地;枚举型：见批注或代码 */
+    private String custRegionCode ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 客户ID;该ID需要在系统中唯一 */
+    public String getCustCode(){
+        return this.custCode;
+    }
+    /** 客户ID;该ID需要在系统中唯一 */
+    public void setCustCode(String custCode){
+        this.custCode=custCode;
+    }
+    /** 客户类型;枚举型：
+企业客户 
+个人客户 */
+    public String getCustomerCode(){
+        return this.customerCode;
+    }
+    /** 客户类型;枚举型：
+企业客户 
+个人客户 */
+    public void setCustomerCode(String customerCode){
+        this.customerCode=customerCode;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public String getCustName(){
+        return this.custName;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public void setCustName(String custName){
+        this.custName=custName;
+    }
+    /** 证件类型;枚举型：
+身份证 
+统一社会信用代码 */
+    public String getIdentityCode(){
+        return this.identityCode;
+    }
+    /** 证件类型;枚举型：
+身份证 
+统一社会信用代码 */
+    public void setIdentityCode(String identityCode){
+        this.identityCode=identityCode;
+    }
+    /** 证件号码 */
+    public String getIdentityNumber(){
+        return this.identityNumber;
+    }
+    /** 证件号码 */
+    public void setIdentityNumber(String identityNumber){
+        this.identityNumber=identityNumber;
+    }
+    /** 是否为农业经营主体;个人客户为空 
+企业客户为枚举型：
+是 
+否
+ */
+    public String getIsAgriculture(){
+        return this.isAgriculture;
+    }
+    /** 是否为农业经营主体;个人客户为空 
+企业客户为枚举型：
+是 
+否
+ */
+    public void setIsAgriculture(String isAgriculture){
+        this.isAgriculture=isAgriculture;
+    }
+    /** 客户类型/企业规模;个人客户枚举型：
+农户
+住户
+其他
+企业客户枚举型：
+大型企业
+中型企业
+小型企业
+微型企业
+ */
+    public String getScaleCode(){
+        return this.scaleCode;
+    }
+    /** 客户类型/企业规模;个人客户枚举型：
+农户
+住户
+其他
+企业客户枚举型：
+大型企业
+中型企业
+小型企业
+微型企业
+ */
+    public void setScaleCode(String scaleCode){
+        this.scaleCode=scaleCode;
+    }
+    /** 归属地;枚举型：见批注或代码 */
+    public String getCustRegionCode(){
+        return this.custRegionCode;
+    }
+    /** 归属地;枚举型：见批注或代码 */
+    public void setCustRegionCode(String custRegionCode){
+        this.custRegionCode=custRegionCode;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 融资担保项目信息
+ */
+@Table(name="xmxx_rz_contract_base_info")
+public class XmxxRzContractBaseInfo implements Serializable,Cloneable{
+    /** 项目编号;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String contractNo ;
+    /** 客户ID;系统中已存在的客户ID */
+    private String contcustCode ;
+    /** 客户名称;不超过20个汉字 */
+    private String contcustName ;
+    /** 项目名称;不超过30个汉字 */
+    private String contractName ;
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    private String projectCode ;
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date applyDate ;
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    private String contStateCode ;
+    /** 担保行业分类;枚举型：见批注或代码 */
+    private String industryCode ;
+    /** 是否绿色信贷;枚举型： 是 否 */
+    private String isCredit ;
+    /** 是否首贷;枚举型： 是 否 */
+    private String isFirst ;
+    /** 是否为关联方担保/是否为比例风险型;枚举型： 是 否 */
+    private String isRelevance ;
+    /** 发放方式;枚举型：
+直接发放
+转入
+其他发放方式 */
+    private String isSuecode ;
+    /** 交易对手类型;枚举型：见批注或代码 */
+    private String contLendingCode ;
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    private String policyCode ;
+    /** 客户归属地;枚举型：见批注或代码 */
+    private String contRegionCode ;
+    /** 担保业务类型;枚举型：见批注或代码 */
+    private String warrantCode ;
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    private Integer fixedTerm ;
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    private  contractAmount ;
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  discountAmount ;
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  guaranteeAmount ;
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  otherAmount ;
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date lendingDate ;
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date realendDate ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 项目编号;该ID需要在系统中唯一 */
+    public String getContractNo(){
+        return this.contractNo;
+    }
+    /** 项目编号;该ID需要在系统中唯一 */
+    public void setContractNo(String contractNo){
+        this.contractNo=contractNo;
+    }
+    /** 客户ID;系统中已存在的客户ID */
+    public String getContcustCode(){
+        return this.contcustCode;
+    }
+    /** 客户ID;系统中已存在的客户ID */
+    public void setContcustCode(String contcustCode){
+        this.contcustCode=contcustCode;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public String getContcustName(){
+        return this.contcustName;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public void setContcustName(String contcustName){
+        this.contcustName=contcustName;
+    }
+    /** 项目名称;不超过30个汉字 */
+    public String getContractName(){
+        return this.contractName;
+    }
+    /** 项目名称;不超过30个汉字 */
+    public void setContractName(String contractName){
+        this.contractName=contractName;
+    }
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    public String getProjectCode(){
+        return this.projectCode;
+    }
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    public void setProjectCode(String projectCode){
+        this.projectCode=projectCode;
+    }
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getApplyDate(){
+        return this.applyDate;
+    }
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setApplyDate(Date applyDate){
+        this.applyDate=applyDate;
+    }
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    public String getContStateCode(){
+        return this.contStateCode;
+    }
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    public void setContStateCode(String contStateCode){
+        this.contStateCode=contStateCode;
+    }
+    /** 担保行业分类;枚举型：见批注或代码 */
+    public String getIndustryCode(){
+        return this.industryCode;
+    }
+    /** 担保行业分类;枚举型：见批注或代码 */
+    public void setIndustryCode(String industryCode){
+        this.industryCode=industryCode;
+    }
+    /** 是否绿色信贷;枚举型： 是 否 */
+    public String getIsCredit(){
+        return this.isCredit;
+    }
+    /** 是否绿色信贷;枚举型： 是 否 */
+    public void setIsCredit(String isCredit){
+        this.isCredit=isCredit;
+    }
+    /** 是否首贷;枚举型： 是 否 */
+    public String getIsFirst(){
+        return this.isFirst;
+    }
+    /** 是否首贷;枚举型： 是 否 */
+    public void setIsFirst(String isFirst){
+        this.isFirst=isFirst;
+    }
+    /** 是否为关联方担保/是否为比例风险型;枚举型： 是 否 */
+    public String getIsRelevance(){
+        return this.isRelevance;
+    }
+    /** 是否为关联方担保/是否为比例风险型;枚举型： 是 否 */
+    public void setIsRelevance(String isRelevance){
+        this.isRelevance=isRelevance;
+    }
+    /** 发放方式;枚举型：
+直接发放
+转入
+其他发放方式 */
+    public String getIsSuecode(){
+        return this.isSuecode;
+    }
+    /** 发放方式;枚举型：
+直接发放
+转入
+其他发放方式 */
+    public void setIsSuecode(String isSuecode){
+        this.isSuecode=isSuecode;
+    }
+    /** 交易对手类型;枚举型：见批注或代码 */
+    public String getContLendingCode(){
+        return this.contLendingCode;
+    }
+    /** 交易对手类型;枚举型：见批注或代码 */
+    public void setContLendingCode(String contLendingCode){
+        this.contLendingCode=contLendingCode;
+    }
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    public String getPolicyCode(){
+        return this.policyCode;
+    }
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    public void setPolicyCode(String policyCode){
+        this.policyCode=policyCode;
+    }
+    /** 客户归属地;枚举型：见批注或代码 */
+    public String getContRegionCode(){
+        return this.contRegionCode;
+    }
+    /** 客户归属地;枚举型：见批注或代码 */
+    public void setContRegionCode(String contRegionCode){
+        this.contRegionCode=contRegionCode;
+    }
+    /** 担保业务类型;枚举型：见批注或代码 */
+    public String getWarrantCode(){
+        return this.warrantCode;
+    }
+    /** 担保业务类型;枚举型：见批注或代码 */
+    public void setWarrantCode(String warrantCode){
+        this.warrantCode=warrantCode;
+    }
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    public Integer getFixedTerm(){
+        return this.fixedTerm;
+    }
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    public void setFixedTerm(Integer fixedTerm){
+        this.fixedTerm=fixedTerm;
+    }
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    public  getContractAmount(){
+        return this.contractAmount;
+    }
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    public void setContractAmount( contractAmount){
+        this.contractAmount=contractAmount;
+    }
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getDiscountAmount(){
+        return this.discountAmount;
+    }
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setDiscountAmount( discountAmount){
+        this.discountAmount=discountAmount;
+    }
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getGuaranteeAmount(){
+        return this.guaranteeAmount;
+    }
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setGuaranteeAmount( guaranteeAmount){
+        this.guaranteeAmount=guaranteeAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getOtherAmount(){
+        return this.otherAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setOtherAmount( otherAmount){
+        this.otherAmount=otherAmount;
+    }
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getLendingDate(){
+        return this.lendingDate;
+    }
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setLendingDate(Date lendingDate){
+        this.lendingDate=lendingDate;
+    }
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getRealendDate(){
+        return this.realendDate;
+    }
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setRealendDate(Date realendDate){
+        this.realendDate=realendDate;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 非融资担保项目信息
+ */
+@Table(name="xmxx_frz_contract_base_info")
+public class XmxxFrzContractBaseInfo implements Serializable,Cloneable{
+    /** 项目编号;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String contractNo ;
+    /** 客户ID;系统中已存在的客户ID */
+    private String contcustCode ;
+    /** 客户名称;不超过20个汉字 */
+    private String contcustName ;
+    /** 项目名称;不超过30个汉字 */
+    private String contractName ;
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    private String projectCode ;
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date applyDate ;
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    private String contStateCode ;
+    /** 担保行业分类;枚举型：见批注或代码 */
+    private String industryCode ;
+    /** 是否首贷;枚举型： 是 否 */
+    private String isFirst ;
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    private String policyCode ;
+    /** 客户归属地;枚举型：见批注或代码 */
+    private String contRegionCode ;
+    /** 担保业务类型;枚举型：见批注或代码 */
+    private String warrantCode ;
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    private Integer fixedTerm ;
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    private  contractAmount ;
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  discountAmount ;
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  guaranteeAmount ;
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    private  otherAmount ;
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date lendingDate ;
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date realendDate ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 项目编号;该ID需要在系统中唯一 */
+    public String getContractNo(){
+        return this.contractNo;
+    }
+    /** 项目编号;该ID需要在系统中唯一 */
+    public void setContractNo(String contractNo){
+        this.contractNo=contractNo;
+    }
+    /** 客户ID;系统中已存在的客户ID */
+    public String getContcustCode(){
+        return this.contcustCode;
+    }
+    /** 客户ID;系统中已存在的客户ID */
+    public void setContcustCode(String contcustCode){
+        this.contcustCode=contcustCode;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public String getContcustName(){
+        return this.contcustName;
+    }
+    /** 客户名称;不超过20个汉字 */
+    public void setContcustName(String contcustName){
+        this.contcustName=contcustName;
+    }
+    /** 项目名称;不超过30个汉字 */
+    public String getContractName(){
+        return this.contractName;
+    }
+    /** 项目名称;不超过30个汉字 */
+    public void setContractName(String contractName){
+        this.contractName=contractName;
+    }
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    public String getProjectCode(){
+        return this.projectCode;
+    }
+    /** 担保项目类型;枚举型：
+融资担保项目录入
+再担保融资担保项目录入 */
+    public void setProjectCode(String projectCode){
+        this.projectCode=projectCode;
+    }
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getApplyDate(){
+        return this.applyDate;
+    }
+    /** 申请日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setApplyDate(Date applyDate){
+        this.applyDate=applyDate;
+    }
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    public String getContStateCode(){
+        return this.contStateCode;
+    }
+    /** 项目状态;枚举型：
+待放款
+项目在保
+结束
+删除 */
+    public void setContStateCode(String contStateCode){
+        this.contStateCode=contStateCode;
+    }
+    /** 担保行业分类;枚举型：见批注或代码 */
+    public String getIndustryCode(){
+        return this.industryCode;
+    }
+    /** 担保行业分类;枚举型：见批注或代码 */
+    public void setIndustryCode(String industryCode){
+        this.industryCode=industryCode;
+    }
+    /** 是否首贷;枚举型： 是 否 */
+    public String getIsFirst(){
+        return this.isFirst;
+    }
+    /** 是否首贷;枚举型： 是 否 */
+    public void setIsFirst(String isFirst){
+        this.isFirst=isFirst;
+    }
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    public String getPolicyCode(){
+        return this.policyCode;
+    }
+    /** 政策类型;枚举型：“双创双服”主体担保农户及新型农业经营主体担保小微企业战略性新兴产业担保其他政策性担保非政策性担保业务 */
+    public void setPolicyCode(String policyCode){
+        this.policyCode=policyCode;
+    }
+    /** 客户归属地;枚举型：见批注或代码 */
+    public String getContRegionCode(){
+        return this.contRegionCode;
+    }
+    /** 客户归属地;枚举型：见批注或代码 */
+    public void setContRegionCode(String contRegionCode){
+        this.contRegionCode=contRegionCode;
+    }
+    /** 担保业务类型;枚举型：见批注或代码 */
+    public String getWarrantCode(){
+        return this.warrantCode;
+    }
+    /** 担保业务类型;枚举型：见批注或代码 */
+    public void setWarrantCode(String warrantCode){
+        this.warrantCode=warrantCode;
+    }
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    public Integer getFixedTerm(){
+        return this.fixedTerm;
+    }
+    /** 担保期限;阿拉伯数字，不允许有小数，单位为月 */
+    public void setFixedTerm(Integer fixedTerm){
+        this.fixedTerm=fixedTerm;
+    }
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    public  getContractAmount(){
+        return this.contractAmount;
+    }
+    /** 合同金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，必须大于“0” */
+    public void setContractAmount( contractAmount){
+        this.contractAmount=contractAmount;
+    }
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getDiscountAmount(){
+        return this.discountAmount;
+    }
+    /** 优惠金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setDiscountAmount( discountAmount){
+        this.discountAmount=discountAmount;
+    }
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getGuaranteeAmount(){
+        return this.guaranteeAmount;
+    }
+    /** 担保费;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setGuaranteeAmount( guaranteeAmount){
+        this.guaranteeAmount=guaranteeAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public  getOtherAmount(){
+        return this.otherAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元，如没有可写“0” */
+    public void setOtherAmount( otherAmount){
+        this.otherAmount=otherAmount;
+    }
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getLendingDate(){
+        return this.lendingDate;
+    }
+    /** 放款日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setLendingDate(Date lendingDate){
+        this.lendingDate=lendingDate;
+    }
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getRealendDate(){
+        return this.realendDate;
+    }
+    /** 实际结束日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setRealendDate(Date realendDate){
+        this.realendDate=realendDate;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 项目风险分担信息
+ */
+@Table(name="xmxx_contract_share")
+
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 风险分担编号;该ID需要在系统中唯一 */
+    public String getShareNo(){
+        return this.shareNo;
+    }
+    /** 风险分担编号;该ID需要在系统中唯一 */
+    public void setShareNo(String shareNo){
+        this.shareNo=shareNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public String getShareContractNo(){
+        return this.shareContractNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public void setShareContractNo(String shareContractNo){
+        this.shareContractNo=shareContractNo;
+    }
+    /** 分担机构ID;系统中已存在的ID，当分担机构为本身时，填值lendingcode */
+    public String getShareLendingCode(){
+        return this.shareLendingCode;
+    }
+    /** 分担机构ID;系统中已存在的ID，当分担机构为本身时，填值lendingcode */
+    public void setShareLendingCode(String shareLendingCode){
+        this.shareLendingCode=shareLendingCode;
+    }
+    /** 分担机构名称;系统中已存在的ID，当分担机构为本身时，填自身公司名称 */
+    public String getShareLendingName(){
+        return this.shareLendingName;
+    }
+    /** 分担机构名称;系统中已存在的ID，当分担机构为本身时，填自身公司名称 */
+    public void setShareLendingName(String shareLendingName){
+        this.shareLendingName=shareLendingName;
+    }
+    /** 分担风险类型;枚举型：
+直接风险
+间接风险 */
+    public String getRiskCode(){
+        return this.riskCode;
+    }
+    /** 分担风险类型;枚举型：
+直接风险
+间接风险 */
+    public void setRiskCode(String riskCode){
+        this.riskCode=riskCode;
+    }
+    /** 承担比例;阿拉伯数字，允许有小数，有效位为小数点后2位，最大值100 */
+    public  getBearProportion(){
+        return this.bearProportion;
+    }
+    /** 承担比例;阿拉伯数字，允许有小数，有效位为小数点后2位，最大值100 */
+    public void setBearProportion( bearProportion){
+        this.bearProportion=bearProportion;
+    }
+    /** 承担金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getBearAmount(){
+        return this.bearAmount;
+    }
+    /** 承担金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setBearAmount( bearAmount){
+        this.bearAmount=bearAmount;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 项目解保信息
+ */
+@Table(name="xmxx_contract_clearing")
+public class XmxxContractClearing implements Serializable,Cloneable{
+        /** 解保编号;该ID需要在系统中唯一 */
+        @Id
+        @GeneratedValue
+        private String clearingNo ;
+        /** 项目编号;系统中已存在的项目编号 */
+        private String clearingContractNo ;
+        /** 解保机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值lendingcode */
+        private String clearingCode ;
+        /** 解保金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+        private  clearingAmount ;
+        /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+        private  clearingOtherAmount ;
+        /** 解保日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+        private Date clearingDate ;
+        /** 收回方式;枚举型：
+        直接收回
+        转出
+        发行abs
+        其他收回方式 */
+        private String clearingTakeBackCode ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 解保编号;该ID需要在系统中唯一 */
+    public String getClearingNo(){
+        return this.clearingNo;
+    }
+    /** 解保编号;该ID需要在系统中唯一 */
+    public void setClearingNo(String clearingNo){
+        this.clearingNo=clearingNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public String getClearingContractNo(){
+        return this.clearingContractNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public void setClearingContractNo(String clearingContractNo){
+        this.clearingContractNo=clearingContractNo;
+    }
+    /** 解保机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值lendingcode */
+    public String getClearingCode(){
+        return this.clearingCode;
+    }
+    /** 解保机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值lendingcode */
+    public void setClearingCode(String clearingCode){
+        this.clearingCode=clearingCode;
+    }
+    /** 解保金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getClearingAmount(){
+        return this.clearingAmount;
+    }
+    /** 解保金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setClearingAmount( clearingAmount){
+        this.clearingAmount=clearingAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getClearingOtherAmount(){
+        return this.clearingOtherAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setClearingOtherAmount( clearingOtherAmount){
+        this.clearingOtherAmount=clearingOtherAmount;
+    }
+    /** 解保日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getClearingDate(){
+        return this.clearingDate;
+    }
+    /** 解保日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setClearingDate(Date clearingDate){
+        this.clearingDate=clearingDate;
+    }
+    /** 收回方式;枚举型：
+直接收回
+转出
+发行abs
+其他收回方式 */
+    public String getClearingTakeBackCode(){
+        return this.clearingTakeBackCode;
+    }
+    /** 收回方式;枚举型：
+直接收回
+转出
+发行abs
+其他收回方式 */
+    public void setClearingTakeBackCode(String clearingTakeBackCode){
+        this.clearingTakeBackCode=clearingTakeBackCode;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 项目代偿信息
+ */
+@Table(name="xmxx_contract_compen")
+public class XmxxContractCompen implements Serializable,Cloneable{
+    /** 代偿编号;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String compenNo ;
+    /** 项目编号;系统中已存在的项目编号 */
+    private String compenContractNo ;
+    /** 代偿机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值compencode */
+    private String compenCode ;
+    /** 代偿机构名称;项目中已存在的分担机构名称，当解保机构为本身时，填值本身公司名称 */
+    private String compenName ;
+    /** 代偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    private  compenAmount ;
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    private  compenOtherAmount ;
+    /** 代偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date compenDate ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 代偿编号;该ID需要在系统中唯一 */
+    public String getCompenNo(){
+        return this.compenNo;
+    }
+    /** 代偿编号;该ID需要在系统中唯一 */
+    public void setCompenNo(String compenNo){
+        this.compenNo=compenNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public String getCompenContractNo(){
+        return this.compenContractNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public void setCompenContractNo(String compenContractNo){
+        this.compenContractNo=compenContractNo;
+    }
+    /** 代偿机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值compencode */
+    public String getCompenCode(){
+        return this.compenCode;
+    }
+    /** 代偿机构ID;项目中已存在的分担机构ID，当解保机构为本身时，填值compencode */
+    public void setCompenCode(String compenCode){
+        this.compenCode=compenCode;
+    }
+    /** 代偿机构名称;项目中已存在的分担机构名称，当解保机构为本身时，填值本身公司名称 */
+    public String getCompenName(){
+        return this.compenName;
+    }
+    /** 代偿机构名称;项目中已存在的分担机构名称，当解保机构为本身时，填值本身公司名称 */
+    public void setCompenName(String compenName){
+        this.compenName=compenName;
+    }
+    /** 代偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getCompenAmount(){
+        return this.compenAmount;
+    }
+    /** 代偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setCompenAmount( compenAmount){
+        this.compenAmount=compenAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getCompenOtherAmount(){
+        return this.compenOtherAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setCompenOtherAmount( compenOtherAmount){
+        this.compenOtherAmount=compenOtherAmount;
+    }
+    /** 代偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getCompenDate(){
+        return this.compenDate;
+    }
+    /** 代偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setCompenDate(Date compenDate){
+        this.compenDate=compenDate;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
+package cn.com.chiner.entity;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+ /**
+ * @author : http://www.chiner.pro
+ * @date : 2021-12-23
+ * @desc : 项目追偿信息
+ */
+@Table(name="xmxx_contract_recovery")
+public class XmxxContractRecovery implements Serializable,Cloneable{
+    /** 追偿编号;该ID需要在系统中唯一 */
+    @Id
+    @GeneratedValue
+    private String recoveryNo ;
+    /** 项目编号;系统中已存在的项目编号 */
+    private String recoveryContractNo ;
+    /** 追偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    private  recoveryAmount ;
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    private  recoveryOtherAmount ;
+    /** 追偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    private Date recoveryDate ;
+    /** 收回方式;枚举型：
+核销（损失减少额）
+转出
+代偿
+损失 */
+    private String recoveryTakeBackCode ;
+    /** 创建时间 */
+    private Date createTime ;
+    /** 更新时间 */
+    private Date updateTime ;
+
+    /** 追偿编号;该ID需要在系统中唯一 */
+    public String getRecoveryNo(){
+        return this.recoveryNo;
+    }
+    /** 追偿编号;该ID需要在系统中唯一 */
+    public void setRecoveryNo(String recoveryNo){
+        this.recoveryNo=recoveryNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public String getRecoveryContractNo(){
+        return this.recoveryContractNo;
+    }
+    /** 项目编号;系统中已存在的项目编号 */
+    public void setRecoveryContractNo(String recoveryContractNo){
+        this.recoveryContractNo=recoveryContractNo;
+    }
+    /** 追偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getRecoveryAmount(){
+        return this.recoveryAmount;
+    }
+    /** 追偿金额;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setRecoveryAmount( recoveryAmount){
+        this.recoveryAmount=recoveryAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public  getRecoveryOtherAmount(){
+        return this.recoveryOtherAmount;
+    }
+    /** 其他费用;阿拉伯数字，允许有小数，有效位为小数点后2位，单位为元 */
+    public void setRecoveryOtherAmount( recoveryOtherAmount){
+        this.recoveryOtherAmount=recoveryOtherAmount;
+    }
+    /** 追偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public Date getRecoveryDate(){
+        return this.recoveryDate;
+    }
+    /** 追偿日期;格式为YYYY-MM-DD，例如：2013-01-01 */
+    public void setRecoveryDate(Date recoveryDate){
+        this.recoveryDate=recoveryDate;
+    }
+    /** 收回方式;枚举型：
+核销（损失减少额）
+转出
+代偿
+损失 */
+    public String getRecoveryTakeBackCode(){
+        return this.recoveryTakeBackCode;
+    }
+    /** 收回方式;枚举型：
+核销（损失减少额）
+转出
+代偿
+损失 */
+    public void setRecoveryTakeBackCode(String recoveryTakeBackCode){
+        this.recoveryTakeBackCode=recoveryTakeBackCode;
+    }
+    /** 创建时间 */
+    public Date getCreateTime(){
+        return this.createTime;
+    }
+    /** 创建时间 */
+    public void setCreateTime(Date createTime){
+        this.createTime=createTime;
+    }
+    /** 更新时间 */
+    public Date getUpdateTime(){
+        return this.updateTime;
+    }
+    /** 更新时间 */
+    public void setUpdateTime(Date updateTime){
+        this.updateTime=updateTime;
+    }
+}
