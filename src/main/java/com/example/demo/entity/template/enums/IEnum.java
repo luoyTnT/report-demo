@@ -12,4 +12,5 @@ public interface IEnum {
      * 获取所有枚举值
      */
     default List<String> getEnumValue() { return null; }
+
 }

@@ -56,74 +56,74 @@
     <frzcontractbaseinfo>
         #foreach($!contract in $!templates.frzContractBaseInfos)
             <contract>
-                <contractno>contract.contractNo</contractno>
-                <contcustcode>contract.contcustCode</contcustcode>
-                <contcustname>contract.contcustName</contcustname>
-                <contractname>contract.contractName</contractname>
-                <projectcode>contract.projectCode</projectcode>
-                <applydate>contract.applyDate</applydate>
-                <contstatecode>contract.contStateCode</contstatecode>
-                <industrycode>contract.industryCode</industrycode>
-                <isfirst>contract.isFirst</isfirst>
-                <policycode>contract.policyCode</policycode>
-                <contregioncode>contract.contRegionCode</contregioncode>
-                <warrantcode>contract.warrantCode</warrantcode>
-                <fixedterm>contract.fixedTerm</fixedterm>
-                <contractamount>contract.contractAmount</contractamount>
-                <discountamount>contract.discountAmount</discountamount>
-                <guaranteeamount>contract.guaranteeAmount</guaranteeamount>
-                <otheramount>contract.otherAmount</otheramount>
+                <contractno>$!contract.contractNo</contractno>
+                <contcustcode>$!contract.contcustCode</contcustcode>
+                <contcustname>$!contract.contcustName</contcustname>
+                <contractname>$!contract.contractName</contractname>
+                <projectcode>$!contract.projectCode</projectcode>
+                <applydate>$!contract.applyDate</applydate>
+                <contstatecode>$!contract.contStateCode</contstatecode>
+                <industrycode>$!contract.industryCode</industrycode>
+                <isfirst>$!contract.isFirst</isfirst>
+                <policycode>$!contract.policyCode</policycode>
+                <contregioncode>$!contract.contRegionCode</contregioncode>
+                <warrantcode>$!contract.warrantCode</warrantcode>
+                <fixedterm>$!contract.fixedTerm</fixedterm>
+                <contractamount>$!contract.contractAmount</contractamount>
+                <discountamount>$!contract.discountAmount</discountamount>
+                <guaranteeamount>$!contract.guaranteeAmount</guaranteeamount>
+                <otheramount>$!contract.otherAmount</otheramount>
             </contract>
         #end
     </frzcontractbaseinfo>
     <contractshare>
         #foreach($!share in $!templates.contractShares)
             <share>
-                <sharecontractno>share.shareContractNo</sharecontractno>
-                <shareno>share.shareNo</shareno>
-                <sharelendingcode>share.shareLendingCode</sharelendingcode>
-                <sharelendingname>share.shareLendingName</sharelendingname>
-                <riskcode>share.riskCode</riskcode>
-                <bearproportion>share.bearProportion</bearproportion>
-                <bearamount>share.bearAmount</bearamount>
+                <sharecontractno>$!share.shareContractNo</sharecontractno>
+                <shareno>$!share.shareNo</shareno>
+                <sharelendingcode>$!share.shareLendingCode</sharelendingcode>
+                <sharelendingname>$!share.shareLendingName</sharelendingname>
+                <riskcode>$!share.riskCode</riskcode>
+                <bearproportion>$!share.bearProportion</bearproportion>
+                <bearamount>$!share.bearAmount</bearamount>
             </share>
         #end
     </contractshare>
     <contractclearing>
         #foreach($!clearing in $!templates.contractClearings)
             <clearing>
-                <clearingcontractno>clearing.clearingContractNo</clearingcontractno>
-                <clearingno>clearing.clearingNo</clearingno>
-                <clearingcode>clearing.clearingCode</clearingcode>
-                <clearingamount>clearing.clearingAmount</clearingamount>
-                <clearingotheramount>clearing.clearingOtherAmount</clearingotheramount>
-                <clearingdate>clearing.clearingDate</clearingdate>
-                <clearingtakebackcode>clearing.clearingTakeBackCode</clearingtakebackcode>
+                <clearingcontractno>$!clearing.clearingContractNo</clearingcontractno>
+                <clearingno>$!clearing.clearingNo</clearingno>
+                <clearingcode>$!clearing.clearingCode</clearingcode>
+                <clearingamount>$!clearing.clearingAmount</clearingamount>
+                <clearingotheramount>$!clearing.clearingOtherAmount</clearingotheramount>
+                <clearingdate>$!clearing.clearingDate</clearingdate>
+                <clearingtakebackcode>$!clearing.clearingTakeBackCode</clearingtakebackcode>
             </clearing>
         #end
     </contractclearing>
     <contractcompen>
         #foreach($!compen in $!templates.contractCompens)
             <compen>
-                <compencontractno>compen.compenContractNo</compencontractno>
-                <compenno>compen.compenNo</compenno>
-                <compencode>compen.compenCode</compencode>
-                <compenname>compen.compenName</compenname>
-                <compenamount>compen.compenAmount</compenamount>
-                <compenotheramount>compen.compenOtherAmount</compenotheramount>
-                <compendate>compen.compenDate</compendate>
+                <compencontractno>$!compen.compenContractNo</compencontractno>
+                <compenno>$!compen.compenNo</compenno>
+                <compencode>$!compen.compenCode</compencode>
+                <compenname>$!compen.compenName</compenname>
+                <compenamount>$!compen.compenAmount</compenamount>
+                <compenotheramount>$!compen.compenOtherAmount</compenotheramount>
+                <compendate>$!compen.compenDate</compendate>
             </compen>
         #end
     </contractcompen>
     <contractrecovery>
         #foreach($!recovery in $!templates.contractRecoveries)
             <recovery>
-                <recoverycontractno>recovery.recoveryContractNo</recoverycontractno>
-                <recoveryno>recovery.recoveryNo</recoveryno>
-                <recoveryamount>recovery.recoveryAmount</recoveryamount>
-                <recoveryotheramount>recovery.recoveryOtherAmount</recoveryotheramount>
-                <recoverydate>recovery.recoveryDate</recoverydate>
-                <recoverytakebackcode>recovery.recoveryTakeBackCode</recoverytakebackcode>
+                <recoverycontractno>$!recovery.recoveryContractNo</recoverycontractno>
+                <recoveryno>$!recovery.recoveryNo</recoveryno>
+                <recoveryamount>$!recovery.recoveryAmount</recoveryamount>
+                <recoveryotheramount>$!recovery.recoveryOtherAmount</recoveryotheramount>
+                <recoverydate>$!recovery.recoveryDate</recoverydate>
+                <recoverytakebackcode>$!recovery.recoveryTakeBackCode</recoverytakebackcode>
             </recovery>
         #end
     </contractrecovery>
